@@ -213,11 +213,20 @@ largest_increase = percentage_changes[largest_increase_company]
 smallest_increase_company = min(percentage_changes, key=percentage_changes.get)
 smallest_increase = percentage_changes[smallest_increase_company]
 
-# Print the best and worst performing companies for the last business day, with the relavant perecentage changes.
-print("The best performing company on " + last_business_date + "was "
-      + largest_increase_company + " with a " + str(round(largest_increase, 3)) + "% change in their share price.")
-print("The worst performing company on " + last_business_date + "was "
-      + smallest_increase_company + " with a " + str(round(smallest_increase, 3)) + "% change in their share price.")
+# Prints the best and worst performing companies for the last business day with the perentage changes in the share price
+if largest_increase >= 0:
+    print("The best performing company on " + last_business_date + "was "
+          + largest_increase_company + " with a " + str(round(largest_increase, 3)) + "% increase in their share price.")
+else:
+    print("The best performing company on " + last_business_date + "was "
+          + largest_increase_company + " with a " + str(round(largest_increase, 3)) + "% decrease in their share price.")
+
+if smallest_increase >= 0:
+    print("The worst performing company on " + last_business_date + "was "
+          + smallest_increase_company + " with a " + str(round(smallest_increase, 3)) + "% increase in their share price.")
+else:
+    print("The worst performing company on " + last_business_date + "was "
+          + smallest_increase_company + " with a " + str(round(smallest_increase, 3)) + "% decrease in their share price.")
 
 t1 = time.time()
 print(str(t1 - t0))
