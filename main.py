@@ -2,7 +2,6 @@ import quandl
 from last_trading_date import last_trading_date
 import time
 
-t0 = time.time()
 # List of companies on the Frankfurt Stock Exchange
 companies = ("1COV_X",
              "2HR_X",
@@ -228,5 +227,3 @@ else:
     print("The worst performing company on " + last_business_date + "was "
           + smallest_increase_company + " with a " + str(round(smallest_increase, 3)) + "% decrease in their share price.")
 
-t1 = time.time()
-print(str(t1 - t0))
